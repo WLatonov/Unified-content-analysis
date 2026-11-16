@@ -347,7 +347,7 @@ def main():
         "overlap_percent": 20,
         "event_page_frequencies": {EVENTS[c][0]: sum(r[c] for r in page_event_rows) for c in EVENTS},
     }
-    (OUT / "00_Манифест_исследования.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+    (OUT / "00_Манифест_расчета.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps(manifest, ensure_ascii=False, indent=2))
 
 

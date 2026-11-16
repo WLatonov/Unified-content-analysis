@@ -29,9 +29,8 @@ def call(script: str, env: dict[str, str], *args: str) -> None:
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(description="Воспроизведение расчетов статьи по двум корпусам Gallica")
+    ap = argparse.ArgumentParser(description="Воспроизводимая обработка двух корпусов Gallica")
     ap.add_argument("--config", default=str(PROJECT / "configs" / "analysis.json"))
-    ap.add_argument("--skip-report", action="store_true", help="не создавать черновик Word")
     args = ap.parse_args()
 
     config_path = Path(args.config).resolve()
@@ -62,13 +61,11 @@ def main() -> None:
     })
 
     call("event_content_analysis.py", env, "--combined")
-    call("reviewer_robustness_analysis.py", env)
+    call("robustness_analysis.py", env)
     call("composition_analysis.py", env)
     call("composition_summary.py", env)
-    call("reclassify_article_press.py", env)
+    call("reclassify_press.py", env)
     call("corpus_comparison_stats.py", env)
-    if not args.skip_report:
-        call("build_event_content_report.py", env, "--combined")
     print(f"\nГотово. Результаты: {output_root}")
 
 

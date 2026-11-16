@@ -10,7 +10,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from reviewer_robustness_analysis import (
+from robustness_analysis import (
     ALEX,
     EVENTS,
     EXTRA,
