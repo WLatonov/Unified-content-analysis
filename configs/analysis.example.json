@@ -1,0 +1,9 @@
+{
+  "parser_root": "../../Gallica_corpus_parser_project/data",
+  "event_database": "state_events_alexander_policy_1812_1822.sqlite3",
+  "personalized_database": "state_all_newspapers_1812_1825.sqlite3",
+  "extra_personalized_corpus": "corpus_alexandre_sainte_alliance_1812_1825/Journal_de_la_Loz_re",
+  "newspaper_type_audit": "../data/newspaper_type_audit.csv",
+  "output_root": "../outputs/reproduction"
+}
+

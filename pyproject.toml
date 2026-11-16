@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gallica-article-analysis"
+version = "0.1.0"
+description = "Воспроизводимая обработка двух газетных корпусов Gallica для статьи"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dependencies = [
+  "pandas>=2.0",
+  "numpy>=1.24",
+  "matplotlib>=3.7",
+  "python-docx>=1.1",
+]
+
